@@ -75,8 +75,6 @@ Module.register("MMM-GoogleMaps-Tracking",{
         var wrapper = document.createElement("div");
         self.map = ""; 
         self.mark = "";
-	this.map-canvas.style.width = this.config.mapWidth;
-	this.map-canvas.style.height = this.config.mapHeight;
 
         if (!self.loaded) {
             wrapper.innerHTML = this.translate("LOADING");
@@ -91,6 +89,8 @@ Module.register("MMM-GoogleMaps-Tracking",{
         mapElement.id = self.mapId;
         mapElement.classList.add("map-canvas");
         wrapper.appendChild(mapElement);
+	self.mapElement.style.width = self.config.mapWidth;
+	self.mapElement.style.height = self.config.mapHeight;
 
         function calculateCenter(){
             if(self.config.lat && self.config.lon){
