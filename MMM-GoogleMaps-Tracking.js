@@ -75,8 +75,8 @@ Module.register("MMM-GoogleMaps-Tracking",{
         var wrapper = document.createElement("div");
         self.map = ""; 
         self.mark = "";
-	self.map-canvas.style.width = self.config.mapWidth;
-	self.map-canvas.style.height = self.config.mapHeight;
+	this.map-canvas.style.width = this.config.mapWidth;
+	this.map-canvas.style.height = this.config.mapHeight;
 
         if (!self.loaded) {
             wrapper.innerHTML = this.translate("LOADING");
