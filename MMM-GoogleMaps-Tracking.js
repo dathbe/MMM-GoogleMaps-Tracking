@@ -7,9 +7,12 @@ Module.register("MMM-GoogleMaps-Tracking",{
 	labelAnchorV: 0,
 	offsetLat: 0,
 	offsetLon: 0,
-    initialLoadDelay: 1000,
-    marker:[
-    ]},
+    	initialLoadDelay: 1000,
+	mapHeight: "400px",
+	mapWidth: "300px",
+    	marker:[
+    	]
+    },
     
     getScripts: function() {
         return [
@@ -72,6 +75,8 @@ Module.register("MMM-GoogleMaps-Tracking",{
         var wrapper = document.createElement("div");
         self.map = ""; 
         self.mark = "";
+	self.map-canvas.style.width = self.config.mapWidth;
+	self.map-canvas.style.height = self.config.mapHeight;
 
         if (!self.loaded) {
             wrapper.innerHTML = this.translate("LOADING");
