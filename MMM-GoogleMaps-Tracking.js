@@ -89,8 +89,8 @@ Module.register("MMM-GoogleMaps-Tracking",{
         mapElement.id = self.mapId;
         mapElement.classList.add("map-canvas");
         wrapper.appendChild(mapElement);
-        mapElement.style.height = "500px";
-        mapElement.style.width = "400px";
+        mapElement.style.height = self.config.mapHeight;
+        mapElement.style.width = self.config.mapWidth;
         
 
         function calculateCenter(){
