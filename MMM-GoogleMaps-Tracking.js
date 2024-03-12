@@ -7,9 +7,12 @@ Module.register("MMM-GoogleMaps-Tracking",{
 	labelAnchorV: 0,
 	offsetLat: 0,
 	offsetLon: 0,
-    initialLoadDelay: 1000,
-    marker:[
-    ]},
+    	initialLoadDelay: 1000,
+	mapHeight: "400px",
+	mapWidth: "300px",
+    	marker:[
+    	]
+    },
     
     getScripts: function() {
         return [
@@ -86,6 +89,9 @@ Module.register("MMM-GoogleMaps-Tracking",{
         mapElement.id = self.mapId;
         mapElement.classList.add("map-canvas");
         wrapper.appendChild(mapElement);
+        mapElement.style.height = self.config.mapHeight;
+        mapElement.style.width = self.config.mapWidth;
+        
 
         function calculateCenter(){
             if(self.config.lat && self.config.lon){

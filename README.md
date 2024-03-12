@@ -52,7 +52,7 @@ var config = {
 
 | Option               | Description
 |--------------------- |-----------
-| `apikey`                | *Required* Google api key. See below for help. <br>**Type:** `string`
+| `apikey`                         | *Required* Google api key. See below for help. <br>**Type:** `string`
 | `lat`  			   | *Optional* Latitude used for centering the map (remove option for center calculation by markers)  <br>**Type:** `string` 
 | `lon`  			   | *Optional* Longitude used for centering the map (remove option for center calculation by markers)  <br>**Type:** `string`
 | `zoom`  			   | *Optional* Zoomlevel. Check google docs for more infos. remove option for automated fit of bounds by markers. Usage is recommended if only one marker is set <br>**Type:** `int`
@@ -60,10 +60,12 @@ var config = {
 | `labelAnchorV`  		   | *Optional* Sets the vertical offset of the anchor point of the label.<br>**Type:** `int`<br>**Default:** 0
 | `offsetLat`                      | *Optional* Sets the latitude center offset on map updates (good if you have big labels).<br>**Type** `int`<br> **dafult** 0
 | `offsetLon`                      | *Optional* Sets the longitude center offset on map updates (good if you have big labels).<br>**Type** `int`<br> **dafult** 0
-| `mapType`  		   | *Optional* This overwrites the styles property which can be set in map-styles.js. Possbile values: hybrid, roadmap, satellite, terrain. Must be lower case. see [Google MapTypeId constants](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeId)<br>**Type:** `string`
-| `marker`  		   | *Required* List of markers defined by latitude and longitude. <br>**Type:** `string`
+| `mapType`  		           | *Optional* This overwrites the styles property which can be set in map-styles.js. Possbile values: hybrid, roadmap, satellite, terrain. Must be lower case. see [Google MapTypeId constants](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeId)<br>**Type:** `string`
+| `marker`  		           | *Required* List of markers defined by latitude and longitude. <br>**Type:** `string`
 | `icon`  			   | *Optional* URL to custom icon  <br>**Type:** `string` <br>**Default:** google red spotlight icon
 | `label`  			   | *Optional* To add a text label to the marker<br>**Type:** `string` <br>**Default:** none
+| `mapHeight`  			   | *Optional* Sets the height of the displayed map<br>**Type:** `string` <br>**Default:** `"400px"`
+| `mapWidth`  			   | *Optional* Sets the width of the displayed map<br>**Type:** `string` <br>**Default:** `"300px"`
 
 
 ## Google API Key
