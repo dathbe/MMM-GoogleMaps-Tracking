@@ -7,6 +7,8 @@ Module.register("MMM-GoogleMaps-Tracking",{
 	labelAnchorV: 0,
 	offsetLat: 0,
 	offsetLon: 0,
+	offsetPxV: 0,
+	offsetPxV: 0,
     	initialLoadDelay: 1000,
 	mapHeight: "400px",
 	mapWidth: "300px",
