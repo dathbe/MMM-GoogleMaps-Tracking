@@ -60,6 +60,8 @@ var config = {
 | `labelAnchorV`  		   | *Optional* Sets the vertical offset of the anchor point of the label.<br>**Type:** `int`<br>**Default:** 0
 | `offsetLat`                      | *Optional* Sets the latitude center offset on map updates (good if you have big labels).<br>**Type** `int`<br> **dafult** 0
 | `offsetLon`                      | *Optional* Sets the longitude center offset on map updates (good if you have big labels).<br>**Type** `int`<br> **dafult** 0
+| `offsetPxV`                      | *Optional* Sets the vertical center offset on map updates by number of pixels (Will not work if `offsetLat` is anything other than `0`).<br>**Type** `int`<br> **dafult** 0
+| `offsetPxH`                      | *Optional* Sets the horizontal center offset on map updates by number of pixels (Will not work if `offsetLon` is anything other than `0`).<br>**Type** `int`<br> **dafult** 0
 | `mapType`  		           | *Optional* This overwrites the styles property which can be set in map-styles.js. Possbile values: hybrid, roadmap, satellite, terrain. Must be lower case. see [Google MapTypeId constants](https://developers.google.com/maps/documentation/javascript/reference/map#MapTypeId)<br>**Type:** `string`
 | `marker`  		           | *Required* List of markers defined by latitude and longitude. <br>**Type:** `string`
 | `icon`  			   | *Optional* URL to custom icon  <br>**Type:** `string` <br>**Default:** google red spotlight icon
