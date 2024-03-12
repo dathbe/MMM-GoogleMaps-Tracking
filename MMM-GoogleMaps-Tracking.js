@@ -128,14 +128,14 @@ Module.register("MMM-GoogleMaps-Tracking",{
 	    if(self.config.offsetLat != 0){
 		offsetV = parseFloat(self.config.offsetLat);
 	    } else if(self.config.offsetPxV != 0){                 //DO MATH
-		offsetV = (maxLat - minLat) / parseFloat(mapHeight.replace("px","")) * parseFloat(self.config.offsetPxV);
+		offsetV = (maxLat - minLat) / parseFloat(self.config.mapHeight.replace("px","")) * parseFloat(self.config.offsetPxV);
 	    } else {
 		offsetV = 0;
 	    }
 	    if(self.config.offsetLon != 0){
 		offsetH = parseFloat(self.config.offsetLon);
 	    } else if(self.config.offsetPxH != 0){                  //DO MATH
-		offsetH = (maxLon - minLon) / parseFloat(mapWidth.replace("px","")) * parseFloat(self.config.offsetPxH);  
+		offsetH = (maxLon - minLon) / parseFloat(self.config.mapWidth.replace("px","")) * parseFloat(self.config.offsetPxH);  
 	    } else {
 		offsetH = 0;
 	    }
