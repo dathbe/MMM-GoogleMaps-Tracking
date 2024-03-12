@@ -109,8 +109,22 @@ Module.register("MMM-GoogleMaps-Tracking",{
 
             centerLat = totalLat / self.config.marker.length;
             centerLon = totalLon / self.config.marker.length;
-			calcLat = centerLat + self.config.offsetLat;
-			calcLon = centerLon + self.config.offsetLon;
+	    if(self.config.offsetLat != 0){
+		offsetV = self.config.offsetLat;
+	    } else if(self.config.offsetPxV != 0){
+		offsetV = self.config.offsetPxV;  //NEED TO DO MORE MATH HERE
+	    } else {
+		offsetV = 0;
+	    }
+	    if(self.config.offsetLon != 0){
+		offsetH = self.config.offsetLon;
+	    } else if(self.config.offsetPxH != 0){
+		offsetH = self.config.offsetPxH;  //NEED TO DO MORE MATH HERE
+	    } else {
+		offsetH = 0;
+	    }
+	    calcLat = centerLat + offsetV;
+	    calcLon = centerLon + offsetH;
             return [calcLat,calcLon];
         }
         setTimeout(function() {
