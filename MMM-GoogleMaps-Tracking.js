@@ -123,8 +123,10 @@ Module.register("MMM-GoogleMaps-Tracking",{
                 totalLon += parseFloat(self.config.marker[i].lon);
             }
 
-            centerLat = totalLat / self.config.marker.length;
-            centerLon = totalLon / self.config.marker.length;
+            //centerLat = totalLat / self.config.marker.length;
+            //centerLon = totalLon / self.config.marker.length;
+	    centerLat = (maxLat + minLat) / 2;
+            centerLon = (maxLon + minLon) / 2;
 	    if(self.config.offsetLat != 0){
 		offsetV = parseFloat(self.config.offsetLat);
 	    } else if(self.config.offsetPxV != 0){                 //DO MATH
