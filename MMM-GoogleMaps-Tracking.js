@@ -7,6 +7,8 @@ Module.register("MMM-GoogleMaps-Tracking",{
 	labelAnchorV: 0,
 	offsetLat: 0,
 	offsetLon: 0,
+	offsetPxH: 0,
+	offsetPxV: 0,
     	initialLoadDelay: 1000,
 	mapHeight: "400px",
 	mapWidth: "300px",
@@ -100,15 +102,47 @@ Module.register("MMM-GoogleMaps-Tracking",{
 
             totalLat = 0;
             totalLon = 0;
+	    maxLat = -90;
+	    minLat = 90;
+	    maxLon = -180;
+	    minLon = 180;
             for(let i = 0; i < self.config.marker.length; i++){
                 totalLat += parseFloat(self.config.marker[i].lat);
+		if(parseFloat(self.config.marker[i].lat) > maxLat){
+			maxLat = parseFloat(self.config.marker[i].lat);
+		}
+		if(parseFloat(self.config.marker[i].lat) < minLat){
+			minLat = parseFloat(self.config.marker[i].lat);
+		}
+		if(parseFloat(self.config.marker[i].lon) > maxLon){
+			maxLon = parseFloat(self.config.marker[i].lon);
+		}
+		if(parseFloat(self.config.marker[i].lon) < minLon){
+			minLon = parseFloat(self.config.marker[i].lon);
+		}
                 totalLon += parseFloat(self.config.marker[i].lon);
             }
 
-            centerLat = totalLat / self.config.marker.length;
-            centerLon = totalLon / self.config.marker.length;
-			calcLat = centerLat + self.config.offsetLat;
-			calcLon = centerLon + self.config.offsetLon;
+            //centerLat = totalLat / self.config.marker.length;
+            //centerLon = totalLon / self.config.marker.length;
+	    centerLat = (maxLat + minLat) / 2;
+            centerLon = (maxLon + minLon) / 2;
+	    if(self.config.offsetLat != 0){
+		offsetV = parseFloat(self.config.offsetLat);
+	    } else if(self.config.offsetPxV != 0){                 //DO MATH
+		offsetV = (maxLat - minLat) / parseFloat(self.config.mapHeight.replace("px","")) * parseFloat(self.config.offsetPxV);
+	    } else {
+		offsetV = 0;
+	    }
+	    if(self.config.offsetLon != 0){
+		offsetH = parseFloat(self.config.offsetLon);
+	    } else if(self.config.offsetPxH != 0){                  //DO MATH
+		offsetH = (maxLon - minLon) / parseFloat(self.config.mapWidth.replace("px","")) * parseFloat(self.config.offsetPxH);  
+	    } else {
+		offsetH = 0;
+	    }
+	    calcLat = centerLat + offsetV;
+	    calcLon = centerLon + offsetH;
             return [calcLat,calcLon];
         }
         setTimeout(function() {
